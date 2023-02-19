@@ -59,6 +59,7 @@ func NeedleHaystack(arr []string, query string) int {
 			return i
 		}
 	}
+	//if there is no index found return -1
 	return -1
 }
 
@@ -95,6 +96,6 @@ func BlueOceanReverse(arr1, arr2 []int) []int {
 func main() {
 	fmt.Println(NarsisticNumber(153))
 	fmt.Println(PartyOutliers([]int{160, 3, 1719, 19, 11, 13, -21}))
-	fmt.Println(NeedleHaystack([]string{"red", "blue", "yellow"}, "blue"))
+	fmt.Println(NeedleHaystack([]string{"red", "blue", "blue", "yellow"}, "yellows"))
 	fmt.Println(BlueOceanReverse([]int{1, 5, 5, 5, 5, 5, 3}, []int{5}))
 }
