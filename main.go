@@ -33,7 +33,6 @@ func countDigit(n int) int {
 func PartyOutliers(arr []int) []int {
 	evenArr := make([]int, 0, 0)
 	oddArr := make([]int, 0, 0)
-
 	for _, num := range arr {
 		if num%2 == 0 {
 			evenArr = append(evenArr, num)
@@ -52,9 +51,19 @@ func PartyOutliers(arr []int) []int {
 	} else {
 		return oddArr
 	}
-
 }
+
+func NeedleHaystack(arr []string, query string) int {
+	for i, val := range arr {
+		if val == query {
+			return i
+		}
+	}
+	return -1
+}
+
 func main() {
 	fmt.Println(NarsisticNumber(153))
 	fmt.Println(PartyOutliers([]int{160, 3, 1719, 19, 11, 13, -21}))
+	fmt.Println(NeedleHaystack([]string{"red", "blue", "yellow"}, "blue"))
 }
