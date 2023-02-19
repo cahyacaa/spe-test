@@ -30,6 +30,31 @@ func countDigit(n int) int {
 	return (1 + countDigit(n/10))
 }
 
+func PartyOutliers(arr []int) []int {
+	evenArr := make([]int, 0, 0)
+	oddArr := make([]int, 0, 0)
+
+	for _, num := range arr {
+		if num%2 == 0 {
+			evenArr = append(evenArr, num)
+		} else {
+			oddArr = append(oddArr, num)
+		}
+	}
+
+	//cannot false because go is need explisit return
+	if len(evenArr) == 0 || len(oddArr) == 0 {
+		return []int{}
+	}
+
+	if len(evenArr) == 1 {
+		return evenArr
+	} else {
+		return oddArr
+	}
+
+}
 func main() {
 	fmt.Println(NarsisticNumber(153))
+	fmt.Println(PartyOutliers([]int{160, 3, 1719, 19, 11, 13, -21}))
 }
